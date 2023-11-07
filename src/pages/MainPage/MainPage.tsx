@@ -1,25 +1,20 @@
 import cls from './MainPage.module.scss'
 import {classNames} from '../../lib/classNames/classNames'
 import {Octokit} from '@octokit/core'
-import {useEffect} from 'react'
 
 const MainPage = () => {
-  const octokit = new Octokit({
-    auth: `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`,
-  })
+  // const octokit = new Octokit({
+  //   auth: `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`,
+  // })
 
-  const getRepos = async () => {
-    const response = await octokit.request('GET /orgs/facebook/repos', {
-      org: 'octokit',
-      type: 'all',
-    })
+  // const getRepos = async () => {
+  //   const response = await octokit.request('GET /orgs/facebook/repos', {
+  //     org: 'octokit',
+  //     type: 'all',
+  //   })
 
-    console.log(response)
-  }
-
-  useEffect(() => {
-    getRepos()
-  }, [])
+  //   console.log(response)
+  // }
 
   return (
     <div className={classNames(cls.MainPage)}>

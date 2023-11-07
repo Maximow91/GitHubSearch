@@ -1,5 +1,5 @@
-import {CounterState} from '../slices/counterSlice'
+import {RepositoriesState} from '../slices/repositoriesSlice'
 
 export interface StateSchema {
-  counter: CounterState
+  repositoryies: RepositoriesState
 }
