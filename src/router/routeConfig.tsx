@@ -1,7 +1,7 @@
 import {ReactNode} from 'react'
 import {RouteProps} from 'react-router-dom'
-import MainPage from '../pages/MainPage'
-import TablePage from '../pages/TablePage'
+import MainPage from '../pages/MainPage/MainPage'
+import TablePage from '../pages/TablePage/TablePage'
 
 export enum AppRoutes {
   MAIN = 'main',
