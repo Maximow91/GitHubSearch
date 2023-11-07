@@ -1,13 +1,10 @@
-import {Link} from 'react-router-dom'
-import './App.scss'
 import {AppRouter} from './router/AppRouter'
-import {getRouteTable, RoutePaths} from './router/routeConfig'
+import './App.scss'
 
 function App() {
   return (
     <>
       <AppRouter />
-      <Link to={getRouteTable('1')}>Alalalal</Link>
     </>
   )
 }
