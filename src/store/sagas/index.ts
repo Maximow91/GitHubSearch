@@ -1,7 +1,7 @@
 import {spawn, all} from 'redux-saga/effects'
+import repositoriesSaga from './repositoriesSaga'
 
 export default function* rootSaga() {
-  console.log('root saga')
-  const sagas = []
+  const sagas = [repositoriesSaga]
   yield all(sagas.map(s => spawn(s)))
 }

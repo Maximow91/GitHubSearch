@@ -1,0 +1,21 @@
+.list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.listHeader {
+  background-color: gray;
+}
+
+.listHeaderItem,
+.listContent {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.listContentItem {
+  border: 1px solid #ddd;
+  padding: 20px;
+  min-width: 250px;
+}

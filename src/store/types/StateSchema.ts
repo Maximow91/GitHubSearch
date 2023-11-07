@@ -1,5 +1,5 @@
-import {RepositoriesState} from '../slices/repositoriesSlice'
+import {RepositoriesState} from './types'
 
 export interface StateSchema {
-  repositoryies: RepositoriesState
+  repositories: RepositoriesState
 }

@@ -1,28 +1,14 @@
 import {createSlice} from '@reduxjs/toolkit'
 import type {PayloadAction} from '@reduxjs/toolkit'
-
-export interface Reopsitory {
-  id: number
-  name: string
-  description: string
-  language: string
-  stars: number
-}
-
-export interface RepositoriesState {
-  page: number
-  search: string
-  loading: boolean
-  error: string | null
-  data: Reopsitory[] | null
-}
+import {NavigateFunction} from 'react-router-dom'
+import {Reopsitory, RepositoriesState} from '../types/types'
 
 const initialState: RepositoriesState = {
   page: 1,
-  search: '',
+  hasMore: true,
   loading: false,
   error: null,
-  data: null,
+  data: [],
 }
 
 export const repositoriesSlice = createSlice({
@@ -31,17 +17,29 @@ export const repositoriesSlice = createSlice({
   reducers: {
     loadRepositoriesPending: (
       state,
-      action: PayloadAction<{page?: number; search?: string}>,
+      action: PayloadAction<{
+        page?: number
+        search?: string
+        navigate?: NavigateFunction
+        initial?: boolean
+      }>,
     ) => {
       state.loading = true
-      state.page = action.payload.page || state.page
-      state.search = action.payload.search || state.search
+      state.page = action.payload?.page || state.page
+      if (action.payload.initial) {
+        state.data = []
+      }
     },
-    loadPeopleSuccess: (state, action: PayloadAction<Reopsitory[]>) => {
-      state.loading = false
-      state.data = action.payload
+    loadRepositoriesSuccess: (state, action: PayloadAction<Reopsitory[]>) => {
+      if (!action.payload.length) {
+        state.loading = false
+        state.hasMore = false
+      } else {
+        state.loading = false
+        state.data = [...state.data, ...action.payload]
+      }
     },
-    loadPeopleReject: (state, action: PayloadAction<string>) => {
+    loadRepositoriesReject: (state, action: PayloadAction<string>) => {
       state.loading = false
       state.error = action.payload
     },

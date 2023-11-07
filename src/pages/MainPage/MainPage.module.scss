@@ -29,4 +29,11 @@
   padding: 0 20px;
   cursor: pointer;
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disabled {
+  opacity: 0.5;
 }
