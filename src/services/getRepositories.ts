@@ -1,6 +1,6 @@
 import {Octokit} from '@octokit/core'
 
-const octokit = new Octokit({auth: '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'})
+const octokit = new Octokit({})
 
 export const getRepositories = async (search: string, page?: number) => {
   const response = await octokit.request(`GET /orgs/${search}/repos`, {

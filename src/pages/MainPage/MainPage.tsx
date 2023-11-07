@@ -46,6 +46,12 @@ const MainPage = () => {
     }
   }
 
+  const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleClick()
+    }
+  }
+
   return (
     <div className={classNames(cls.MainPage)}>
       <h1>GitHubSearch</h1>
@@ -53,6 +59,7 @@ const MainPage = () => {
         <input
           value={inputValue}
           onChange={onTextChange}
+          onKeyDown={onKeyPress}
           type='text'
           className={cls.searchInput}
           placeholder='Поиск репозиториев...'
