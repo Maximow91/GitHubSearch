@@ -7,6 +7,7 @@ export interface Reopsitory {
   owner: {
     login: string
   }
+  html_url: string
 }
 
 export interface RepositoriesState {

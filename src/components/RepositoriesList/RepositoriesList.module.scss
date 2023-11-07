@@ -19,3 +19,12 @@
   padding: 20px;
   min-width: 250px;
 }
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

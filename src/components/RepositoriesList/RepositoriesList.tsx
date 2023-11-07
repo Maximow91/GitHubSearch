@@ -52,7 +52,13 @@ export const RepositoriesList = ({className}: RepositoriesListProps) => {
         itemContent={(index, repositories) => (
           <>
             <td key={index} className={cls.listContentItem}>
-              {repositories.name}
+              <a
+                className={cls.link}
+                href={repositories.html_url}
+                target='_blank'
+                rel='noopener noreferrer'>
+                {repositories.name}
+              </a>
             </td>
             <td className={cls.listContentItem}>{repositories.description}</td>
             <td className={cls.listContentItem}>{repositories.language}</td>
