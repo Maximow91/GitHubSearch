@@ -51,7 +51,9 @@ export const RepositoriesList = ({className}: RepositoriesListProps) => {
         )}
         itemContent={(index, repositories) => (
           <>
-            <td className={cls.listContentItem}>{repositories.name}</td>
+            <td key={index} className={cls.listContentItem}>
+              {repositories.name}
+            </td>
             <td className={cls.listContentItem}>{repositories.description}</td>
             <td className={cls.listContentItem}>{repositories.language}</td>
             <td className={cls.listContentItem}>
