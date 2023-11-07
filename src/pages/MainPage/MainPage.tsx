@@ -16,6 +16,8 @@ const MainPage = () => {
   //   console.log(response)
   // }
 
+  const handleClick = () => {}
+
   return (
     <div className={classNames(cls.MainPage)}>
       <h1>GitHubSearch</h1>
@@ -25,7 +27,9 @@ const MainPage = () => {
           className={cls.searchInput}
           placeholder='Поиск репозиториев...'
         />
-        <button className={cls.searchButton}>Поиск</button>
+        <button onClick={handleClick} className={cls.searchButton}>
+          Поиск
+        </button>
       </div>
     </div>
   )
