@@ -18,8 +18,8 @@ export const repositoriesSlice = createSlice({
     loadRepositoriesPending: (
       state,
       action: PayloadAction<{
+        search: string
         page?: number
-        search?: string
         navigate?: NavigateFunction
         initial?: boolean
       }>,
